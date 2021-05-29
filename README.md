@@ -1,14 +1,15 @@
 ## Welcome to JavaScript 30
 
-1. **Drum Kit** [open](https://chengyuu.github.io/javascript30/javascript30-1/javascript30-1.html)
-2. **CSS Clock** [open](https://chengyuu.github.io/javascript30/javascript30-2/javascript30-2.html)
-3. **CSS Variable** [open](https://chengyuu.github.io/javascript30/javascript30-3/javascript30-3.html)
-4. **Array Cardio 1** [open](https://chengyuu.github.io/javascript30/javascript30-4/javascript30-4.html)
-5. **Flex Panels** [open](https://chengyuu.github.io/javascript30/javascript30-5/javascript30-5.html)
-6. **Type Ahead** [open](https://chengyuu.github.io/javascript30/javascript30-6/javascript30-6.html)
-7. **Array Cardio 2** [open](https://chengyuu.github.io/javascript30/javascript30-7/javascript30-7.html)
-8. **HTML5 Canvas** [open](https://chengyuu.github.io/javascript30/javascript30-8/javascript30-8.html)
+1. [Drum Kit](https://chengyuu.github.io/javascript30/javascript30-1/javascript30-1.html)
+2. [CSS Clock](https://chengyuu.github.io/javascript30/javascript30-2/javascript30-2.html)
+3. [CSS Variable](https://chengyuu.github.io/javascript30/javascript30-3/javascript30-3.html)
+4. [Array Cardio 1](https://chengyuu.github.io/javascript30/javascript30-4/javascript30-4.html)
+5. [Flex Panels](https://chengyuu.github.io/javascript30/javascript30-5/javascript30-5.html)
+6. [Type Ahead](https://chengyuu.github.io/javascript30/javascript30-6/javascript30-6.html)
+7. [Array Cardio](https://chengyuu.github.io/javascript30/javascript30-7/javascript30-7.html)
+8. [HTML5 Canvas](https://chengyuu.github.io/javascript30/javascript30-8/javascript30-8.html)
 
+```markdown
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/chengyuu/javascript30/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
@@ -46,3 +47,4 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
 ### Support or Contact
 
 Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+```
