@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 Canvas</title>
+  <link rel="stylesheet" type="text/css" href="javascript30-8.css">
+</head>
+
+<body>
+  <div class="item">
+    <canvas id="draw" width="550" height="550"></canvas>
+    <div class="controler">
+      <div class="randomColor">Random Color</div>
+      <label for="width">Width</label>
+      <input id='width' type="range" name="spacing" min="5" max="50" value="20" data-sizing="px">
+      <a class="save" download='myCanvasImage.jpg' href=''>Save Image</a>
+    </div>
+  </div>
+
+  <script src="javascript30-8.js">
+  </script>
+</body>
+
+</html>
