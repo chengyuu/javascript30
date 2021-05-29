@@ -1,4 +1,4 @@
-## Welcome to JavaScript 30
+# Welcome to JavaScript 30
 
 1.  [Drum Kit](https://chengyuu.github.io/javascript30/javascript30-1/javascript30-1.html)
 2.  [CSS Clock](https://chengyuu.github.io/javascript30/javascript30-2/javascript30-2.html)
@@ -6,29 +6,7 @@
 4.  [Array Cardio 1](https://chengyuu.github.io/javascript30/javascript30-4/javascript30-4.html)
 5.  [Flex Panels](https://chengyuu.github.io/javascript30/javascript30-5/javascript30-5.html)
 6.  [Type Ahead](https://chengyuu.github.io/javascript30/javascript30-6/javascript30-6.html)
-7.  [Array Cardio](https://chengyuu.github.io/javascript30/javascript30-7/javascript30-7.html)
+7.  [Array Cardio 2](https://chengyuu.github.io/javascript30/javascript30-7/javascript30-7.html)
 8.  [HTML5 Canvas](https://chengyuu.github.io/javascript30/javascript30-8/javascript30-8.html)
-
-```markdown
-## Welcome to GitHub Pages
-You can use the [editor on GitHub](https://github.com/chengyuu/javascript30/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-### Markdown
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-```markdown
-Syntax highlighted code block
-# Header 1
-## Header 2
-### Header 3
-- Bulleted
-- List
-1. Numbered
-2. List
-**Bold** and _Italic_ and `Code` text
-[Link](url) and ![Image](src)
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-### Jekyll Themes
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/chengyuu/javascript30/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-### Support or Contact
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
-```
+9.  DevTools
+10.  Hold Shift & Check Checkboxes
