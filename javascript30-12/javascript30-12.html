@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Key Sequence Detection</title>
+  <link rel="stylesheet" type="text/css" href="javascript30-12.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Press the keys to find the Secret Code !</h1>
+    <button>Hint</button>
+    <span class="hint"></span>
+    <p>※ Only works on computer.</p>
+  </div>
+  <p class="text"></p>
+
+  <script>
+    let secretCode = [69, 65, 83, 84, 69, 82, 69, 71, 71]
+    let inputCode = []
+    let correct = 0
+    // 密碼比對正確後顯示文字
+    function matchKey(e) {
+      inputCode.push(e.keyCode)
+      console.log(secretCode, inputCode)
+      if (secretCode.join() === inputCode.join()) {
+        console.log('bingo')
+        correct++
+      }
+      while (inputCode.length >= secretCode.length) {
+        inputCode.shift()
+      }
+      document.querySelector('.text').innerHTML = `Bingo ${correct} times !`
+    }
+    window.addEventListener('keyup', matchKey)
+    // 點擊按鈕後顯示密碼
+    let code = ''
+    let hint = document.querySelector('.hint')
+    secretCode.forEach(
+      s => code += String.fromCharCode(s)
+    )
+    hint.innerHTML = `Secret Code : ${code}`
+    document.querySelector('button').addEventListener('click', () => hint.classList.toggle('open'))
+  </script>
+</body>
+
+</html>
