@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Sort Without Articles</title>
+  <link rel="stylesheet" type="text/css" href="javascript30-17.css">
+</head>
+
+<body>
+
+  <ul id="bands"></ul>
+
+  <script>
+    const bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'];
+
+    // 用正則表達式將 開頭為the或a或an(不分大小寫)替換為空字串
+    function strip(band) { return band.replace(/^(the |a |an )/i, '').trim() }
+    // 產生新陣列以上述方式排序
+    let sortBands = [...bands].sort((a, b) => strip(a) > strip(b) ? 1 : -1)
+    // 將新陣列顯示於畫面
+    document.getElementById('bands').innerHTML = sortBands.map(band =>
+      `<li>${band}</li>`
+    ).join('')
+  </script>
+
+</body>
+
+</html>
