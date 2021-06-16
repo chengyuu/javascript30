@@ -1,0 +1,59 @@
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+html,body{
+  background-color: #ffa;
+  height:100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+}
+.wrapper{
+  max-width: 300px;
+  text-align: center;
+  background-color:rgba(255, 255, 255, 0.5);
+  padding: 20px;
+  box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.fas{
+  font-size: 5rem;
+  color: rgba(0,0,0,0.8);
+}
+h2{
+  font-size: 2.5rem;
+}
+.plates{  
+  text-align: left;
+  margin-top: 10px;
+}
+.plates li {
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+  padding: 10px 0;
+  display: flex;
+}
+.plates label {
+  flex: 1;
+  cursor: pointer;
+}
+.plates input {
+  display: none;
+}
+.plates input + label:before {
+  content: "⬜️";
+  margin-right: 10px;
+}
+.plates input:checked + label:before {
+  content: "🍳";
+}
+.add-items {
+  margin-top: 20px;
+}
+.add-items input {
+  padding: 10px;
+  outline: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
