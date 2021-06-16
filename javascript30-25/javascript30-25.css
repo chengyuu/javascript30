@@ -1,0 +1,43 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+div {
+  width: 100%;
+  padding: 100px;
+}
+.one {
+  background: thistle;
+}
+.two {
+  background: mistyrose;
+}
+.three {
+  background: coral;
+}
+button{
+  display: flex;
+  margin: 10px auto;
+  padding: 5px;
+}
+ul{
+  list-style: none;
+  background-color: #faa;
+  padding: 15px;
+}
+li{
+  background-color: #ffa;
+  padding: 15px;
+}
+a{
+  background-color: #fff;
+  font-size: 30px;
+  color: #000;
+  text-decoration: none;
+}
