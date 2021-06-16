@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Console Tricks!</title>
+</head>
+
+<body>
+
+  <p>×× Check Out <span onClick="makeGreen()"> Dev Tools Domination</span> ××</p>
+
+  <script>
+    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+
+    function makeGreen() {
+      const span = document.querySelector('span');
+      span.style.color = '#BADA55';
+      span.style.fontSize = '50px';
+    }
+    // console 封裝，上線後將 isDev 改為 false
+    let console = {
+      isDev: true,
+      log(...args) {
+        if (!this.isDev) return;
+        window.console.log(...args);
+      },
+      warn(...args) {
+        if (!this.isDev) return;
+        window.console.warn(...args);
+      },
+      error(...args) {
+        if (!this.isDev) return;
+        window.console.error(...args);
+      },
+      info(...args) {
+        if (!this.isDev) return;
+        window.console.info(...args);
+      },
+      assert(...args) {
+        if (!this.isDev) return;
+        window.console.assert(...args);
+      },
+      dir(...args) {
+        if (!this.isDev) return;
+        window.console.dir(...args);
+      },
+      table(...args) {
+        if (!this.isDev) return;
+        window.console.table(...args);
+      },
+      groupCollapsed(...args) {
+        if (!this.isDev) return;
+        window.console.groupCollapsed(...args);
+      },
+      groupEnd(...args) {
+        if (!this.isDev) return;
+        window.console.groupEnd(...args);
+      },
+      count(...args) {
+        if (!this.isDev) return;
+        window.console.count(...args);
+      },
+      time(...args) {
+        if (!this.isDev) return;
+        window.console.time(...args);
+      },
+      timeEnd(...args) {
+        if (!this.isDev) return;
+        window.console.timeEnd(...args);
+      },
+    }
+    // Regular
+    console.log(123, 456)
+    // Interpolated (%s:string字串, %f:float浮點數, %d:整數)
+    console.log('Hello I am a %s string!', '💩');
+    console.log('Hello I am a %f float!', 3.45);
+    console.log('Hello I am a %d 整數!', 3.45);
+    // ES6:
+    console.log(`Hello, ${dogs[0].name}`)
+    // Styled
+    console.log('%c住手!', 'font-size:50px; font-family:Microsoft JhengHei ;color:red; text-shadow: 1px 1px 1px #000, 0 -1px 1px #000, 1px 1px 1px #000, -1px 0 0 #000, 1px 1px 0 #000, 1px 0 0 #000, 0 -1px 0 #000;')
+    // warning!
+    console.warn('警告')
+    // Error :|
+    console.error('錯誤')
+    // Info (firefox 會顯示藍色!圖示)
+    console.info('訊息')
+    // Testing
+    console.assert(true, '訊息1')
+    console.assert(false, '訊息2')
+    console.assert('', '訊息3')
+    console.assert(0, '訊息4')
+    console.assert(null, '訊息5')
+    console.assert(NaN, '訊息6')
+    console.assert(undefined, '訊息7')
+    // clearing (Ctrl + L)
+    // Viewing DOM Elements or Object
+    const p = document.querySelector('p')
+    console.dir(p)
+    console.log(p)
+    // Grouping together
+    dogs.forEach(dog => {
+      console.groupCollapsed(`${dog.name}`);
+      console.log(`This is ${dog.name}`);
+      console.log(`${dog.name} is ${dog.age} years old`);
+      console.log(`${dog.name} is ${dog.age * 7} dog years old`);
+      console.groupEnd(`${dog.name}`);
+    });
+    console.table(dogs)
+    console.table(dogs, ['name']) // 通常用於顯示JSON資料，可篩選顯示項目
+    // counting
+    console.count('Wes');
+    console.count('Wes');
+    console.count('Steve');
+    console.count('Steve');
+    console.count('Wes');
+    console.count('Steve');
+    console.count('Wes');
+    // timing 
+    // 變數宣告在全域，執行時間比較慢:但若code有封裝，則執行時間無太大差異
+    {
+      console.time('test1-i外j外');
+      let i1;
+      let j1;
+      for (i1 = 0; i1 < 1000000; i1++) {
+        j1 = i1
+      }
+      console.timeEnd('test1-i外j外')
+    }
+    {
+      console.time('test2-i外j內');
+      let i2;
+      for (i2 = 0; i2 < 1000000; i2++) {
+        let j2 = i2
+      }
+      console.timeEnd('test2-i外j內')
+    }
+    {
+      console.time('test3-i內j外');
+      let j3;
+      for (let i3 = 0; i3 < 1000000; i3++) {
+        j3 = i3
+      }
+      console.timeEnd('test3-i內j外')
+    }
+    {
+      console.time('test4-i內j內');
+      for (let i4 = 0; i4 < 1000000; i4++) {
+        let j4 = i4
+      }
+      console.timeEnd('test4-i內j內')
+    }
+  </script>
+</body>
+
+</html>
