@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Mouse Shadow</title>
+  <link rel="stylesheet" type="text/css" href="javascript30-16.css">
+</head>
+
+<body>
+
+  <div class="hero">
+    <h1 contenteditable>🔥WOAH!</h1>
+  </div>
+
+  <script>
+    ; (function () {
+      let text = document.querySelector('h1')
+      document.querySelector('.hero').addEventListener('mousemove', function (e) {
+        let length = 300
+        let { offsetX, offsetY, target } = e
+        let x = Math.floor(offsetX / target.offsetWidth * length) * 2 - length
+        let y = Math.floor(offsetY / target.offsetHeight * length) * 2 - length
+        if (target != this) {
+          x += this.offsetLeft
+          y += this.offsetTop
+        }
+        console.log(x, y)
+        text.style.textShadow = `
+        ${x * -1}px ${y * 1}px 5px rgba(0,255,255,0.5),
+        ${y * -1}px ${x * -1}px 5px rgba(255,255,0,0.5),
+        ${y * 1}px ${x * 1}px 5px rgba(0,255,0,0.5),
+        ${x * 1}px ${y * -1}px 5px rgba(0,0,255,0.5)        
+        `
+      })
+    })()
+  </script>
+</body>
+
+</html>
