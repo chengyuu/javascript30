@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Understanding JavaScript's Capture</title>
+  <link rel="stylesheet" type="text/css" href="javascript30-25.css">
+</head>
+
+<body class="body">
+  <button>Button</button>
+  <div class="one">
+    <div class="two">
+      <div class="three">
+      </div>
+    </div>
+  </div>
+  <ul>
+    <li><a href="#" class="list">list 1</a></li>
+    <li><a href="#" class="list">list 2</a></li>
+    <li><a href="#" class="list">list 3</a></li>
+  </ul>
+
+  <script>
+    let button = document.querySelector('button')
+    let count = 0
+    function clickHandler() {
+      count++
+      button.innerHTML = `Click*${count}`
+    }
+    // addEventListener('事件類型EventType', 回呼函式callback, 設定options{捕獲capture:true由外到內/false由內到外(冒泡bubbling), 執行次數once:true只執行一次/false每次都執行})
+    button.addEventListener('click', clickHandler, { capture: false, once: false })
+
+    let divs = document.querySelectorAll('div')
+    function divHandler(e) {
+      e.stopPropagation() // 停止事件傳遞
+      console.log(e.composedPath()) //返回事件路徑 (e.path)
+      console.log(this.className)
+    }
+    divs.forEach(div => div.addEventListener('click', divHandler, { capture: false }))
+
+    // 綁定:缺點若新增element會遺漏監聽
+    let as = document.querySelectorAll('a')
+    function aHandler(e) {
+      e.preventDefault() //取消事件的預設行為
+      console.log("Binding A Click:", this)
+      let li = document.createElement('li')
+      let a = document.createElement('a')
+      a.textContent = `list binding`
+      ul.appendChild(li)
+      li.appendChild(a)
+    }
+    as.forEach(a => a.addEventListener('click', aHandler, { capture: false, passive: false })) //passive:true-永遠不會執行preventDefault()
+
+    // 委派:優點一定範圍內的element都可被監聽
+    let ul = document.querySelector('ul')
+    function ulHandler(e) {
+      e.stopPropagation()
+      //判斷 element
+      if (e.target.nodeName === "A") { // nodeName的值要大寫
+        e.preventDefault()
+        console.log("Delegate A Click:", e.target)
+        let li = document.createElement('li')
+        let a = document.createElement('a')
+        a.textContent = `list delegate`
+        ul.appendChild(li)
+        li.appendChild(a)
+      }
+      // 判斷 class
+      if (e.target.classList.contains("list")) {
+        console.log('e.target:classList')
+      }
+      if (e.composedPath().find(dom => {
+        return dom.classList && dom.classList.contains("list")
+      })) {
+        console.log('e.composedPath():classList')
+      }
+    }
+    ul.addEventListener('click', ulHandler, { capture: false })
+  </script>
+</body>
+
+</html>
