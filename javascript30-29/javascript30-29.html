@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>⏳ Countdown Timer</title>
+  <link rel="stylesheet" href="javascript30-29.css">
+  <link rel="shortcut icon" href="#">
+</head>
+
+<body>
+  <div class="timer">
+    <div class="timer__controls">
+      <button data-time="20" class="timer__button">20 Secs</button>
+      <button data-time="300" class="timer__button">Work 5</button>
+      <button data-time="900" class="timer__button">Quick 15</button>
+      <button data-time="1200" class="timer__button">Snack 20</button>
+      <button data-time="3600" class="timer__button">Lunch Break</button>
+      <form name="customForm" id="custom">
+        <input type="text" name="minutes" placeholder="Enter Minutes">
+      </form>
+    </div>
+    <div class="display">
+      <h1 class="display__time-left"></h1>
+      <p>
+        <span class="display__end-time"></span>
+        <span class="sound">🔇</span>
+      </p>
+    </div>
+  </div>
+  <audio name="start" src="digital-countdown.wav" loop='true'></audio>
+  <audio name="end" src="electronic-timesup.wav" loop='true'></audio>
+
+  <script src="javascript30-29.js"></script>
+</body>
+
+</html>
